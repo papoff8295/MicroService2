@@ -31,12 +31,14 @@ public class WebSocketHandler extends TextWebSocketHandler {
     @Override
     protected void handleTextMessage(@NonNull WebSocketSession session, TextMessage message) throws Exception {
 
-        Gson g = new Gson();
-        Message m = g.fromJson(message.getPayload(), Message.class);
+        //Gson g = new Gson();
+        //Message m = g.fromJson(message.getPayload(), Message.class);
+        Message m = new ObjectMapper().readValue(message.getPayload(), Message.class);
+
         long sessionId = m.getSessionId();
 
         //save latest session id to cash
-        if (sessionCash.getSessionCash().get("sessionCash") < sessionId) {
+        if (sessionCash.getSessionCash().get("sessionId") < sessionId) {
             sessionCash.saveEventCash("sessionId", sessionId);
         }
 

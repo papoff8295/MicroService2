@@ -27,4 +27,17 @@ public class Message {
         this.MC3Time = MC3Time;
         this.endTime = endTime;
     }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "id: " + id + ":" + " \\n" +
+                "session_id: " + sessionId + "," + " \\n" +
+                "MC1_timestamp: " + MC1Time + "," + " \\n" +
+                "MC2_timestamp: " + MC2Time + "," + " \\n" +
+                "MC3_timestamp: " + MC3Time + "," + " \\n" +
+                "end_timestamp: " + endTime +
+                '}';
+    }
+
 }
