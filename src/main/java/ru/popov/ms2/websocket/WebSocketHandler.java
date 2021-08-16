@@ -69,7 +69,7 @@ public class WebSocketHandler extends TextWebSocketHandler {
         //we calculate the interaction time
         Date timeWork = new Date(endDate.getTime() - startDate.getTime());
         long time = timeWork.getTime()/1000;
-        System.out.println("Disconnected" + "Время взаимодействия: " + time +
+        System.out.println("Disconnected! " + "Время взаимодействия: " + time +
                 "сек. " + "Кол-во сообщений: " + sessionCash.getSessionCash().get("sessionId"));
 
     }
